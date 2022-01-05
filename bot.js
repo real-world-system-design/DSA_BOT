@@ -10,6 +10,10 @@ bot.on('ready', () => {
 //Message Event
 bot.on('messageCreate', (message) => {
     console.log(message.content);
+    if(message.author.bot === true) return;
+    if(message.content === '/hello') {
+        message.channel.send('Hi please be consistent')
+    }
 })
 
 bot.login(process.env.DISCORDJS_BOT_TOKEN)
